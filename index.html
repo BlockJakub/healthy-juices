@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Health Benefits of Fresh Juices – HealthyJuices</title>
+
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <!-- Adobe Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/kcj1oil.css">
+
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body class="body">
+
+    <h1 class="header">Welcome to Healthy Juices</h1>
+    <p class="header-subtitle">Your one-stop destination for nutritious juice recipes and health
+        tips. </p>
+
+    <div class="parallax-container" style="height: 400px;">
+        <div class="parallax"><img src="img/antioxidant.jpg" alt="Antioxidant Parallax"></div>
+    </div>
+    <!-- Navbar -->
+    <header>
+        <nav class="site-navbar">
+            <div class="nav-wrapper container">
+                <a href="index.html" class="brand-logo">HealthyJuices</a>
+
+                <a href="#" data-target="mobile-menu" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a class="hoverable" href="index.html">Home</a></li>
+                    <li>
+                        <a class="dropdown-trigger hoverable" href="#" data-target="topics-dropdown"
+                            aria-haspopup="true" aria-expanded="false">Topics<i
+                                class="material-icons right">arrow_drop_down</i></a>
+                    </li>
+                    <li class="active"><a class="hoverable" href="resources.html">Resources</a></li>
+                    <li><a class="hoverable" href="about.html">About</a></li>
+                    <li><a class="hoverable" href="contact.html">Contact</a></li>
+                    <!-- auth links (fallback) -->
+                    <li class="auth-fallback"><a class="hoverable" href="php/login.html">Login</a></li>
+                    <li class="auth-fallback"><a class="hoverable" href="php/register.html">Register</a></li>
+                </ul>
+
+                <!-- Dropdown Structure -->
+                <ul id="topics-dropdown" class="dropdown-content" role="menu">
+                    <li role="none"><a role="menuitem" href="article-juices.html">Juices</a></li>
+                    <li role="none"><a role="menuitem" href="article-drinking.html">Drinking</a></li>
+                    <li role="none"><a role="menuitem" href="article-eating.html">Eating</a></li>
+                    <li role="none"><a role="menuitem" href="article-movement.html">Movement</a></li>
+                    <li role="none"><a role="menuitem" href="article-sleep.html">Sleep</a></li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-menu">
+            <li><a href="index.html">Home</a></li>
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header">Topics<i class="material-icons right">arrow_drop_down</i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="article-juices.html">Juices</a></li>
+                                <li><a href="article-drinking.html">Drinking</a></li>
+                                <li><a href="article-eating.html">Eating</a></li>
+                                <li><a href="article-movement.html">Movement</a></li>
+                                <li><a href="article-sleep.html">Sleep</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="divider"></li>
+            <!-- mobile auth links injected here (fallback) -->
+            <li id="mobileAuthLinks"><a class="hoverable" href="php/login.html">Login</a><br><a class="hoverable"
+                    href="php/register.html">Register</a></li>
+        </ul>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container section">
+
+        <div class="parallax-container hero">
+            <div class="parallax">
+                <img src="img/antioxidant.jpg" alt="Antioxidant Parallax">
+            </div>
+        </div>
+
+
+        <section class="section row">
+            <h1 class="center-align h1">Daily Health Plan</h1>
+            <div class="container">
+                <div class="section">
+                    <div class="row ">
+                        <a href="nutrition.html">
+                            <div class="col s12 m6 l12 center-align">
+                                <div class="card-panel z-depth-1">
+                                    <span class="flow-text">
+                                        <h4 class="h4"><i class="material-icons">local_hospital</i>Nutrition
+                                        </h4>
+                                        <ul>
+                                            <li>Provides essential vitamins</li>
+                                            <li>Rich in minerals</li>
+                                            <li>High in antioxidants</li>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="training.html">
+                            <div class="col s12 m6 l6 center-align">
+                                <div class="card-panel z-depth-1">
+                                    <span class="flow-text">
+                                        <h4><i class="material-icons">fitness_center</i>Training</h4>
+                                        <ul>
+                                            <li>Increases strength</li>
+                                            <li>Enhances endurance</li>
+                                            <li>Improves flexibility</li>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="breathing.html">
+                            <div class="col s12 m6 l6 center-align">
+                                <div class="card-panel z-depth-1">
+                                    <span class="flow-text">
+                                        <h4><i class="material-icons">air</i>Breathing</h4>
+                                        <ul>
+                                            <li>Reduces stress</li>
+                                            <li>Improves focus</li>
+                                            <li>Enhances lung capacity</li>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="cold-hardening.html">
+                            <div class="col s12 m6 l6 center-align">
+                                <div class="card-panel z-depth-1">
+                                    <span class="flow-text">
+                                        <h4><i class="material-icons">ac_unit</i>Cold hardening</h4>
+                                        <ul>
+                                            <li>Improves circulation</li>
+                                            <li>Boosts immune response</li>
+                                            <li>Enhances mood and energy</li>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="juice-benefits.html">
+                            <div class="col s12 m6 l6 center-align">
+                                <div class="card-panel z-depth-1">
+                                    <span class="flow-text">
+                                        <h4><i class="material-icons">opacity</i>Juice Benefits</h4>
+                                        <ul>
+                                            <li>Boosts immunity</li>
+                                            <li>Improves digestion</li>
+                                            <li>Increases energy levels</li>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="sleep-benefits.html">
+                            <div class="col s12 m6 l12 center-align">
+                                <div class="card-panel z-depth-1">
+                                    <span class="flow-text">
+                                        <h4><i class="material-icons">hotel</i>Sleep Benefits</h4>
+                                        <ul>
+                                            <li>Promotes relaxation</li>
+                                            <li>Enhances sleep quality</li>
+                                            <li>Supports overall health</li>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction -->
+        <section class="introduction row valign-wrapper">
+            <div class="col s12 m6">
+                <h1>The Transformative Power of Fresh Juices</h1>
+                <p>In today’s fast-paced world, maintaining a diet rich in fruits and vegetables can be challenging.
+                    Busy schedules, processed foods, and limited access to fresh produce often lead to nutrient
+                    deficiencies that affect our energy, immunity, and overall wellbeing.</p>
+                <p>Fresh juices offer a practical solution: they concentrate vitamins, minerals, and antioxidants in
+                    a
+                    delicious and convenient form. When consumed responsibly alongside whole foods, they can support
+                    your body’s natural defenses, improve hydration, and contribute to a healthier lifestyle.</p>
+                <p>In this article, we explore the science behind fresh juices, highlight real-life experiences, and
+                    provide recipes for everyday health-boosting drinks.</p>
+            </div>
+            <div class="col s12 m6">
+                <img src="img/Firefly_glass of juice Banana, almond(Protein Punch) 434999.jpg" alt="Fresh Juice"
+                    class="responsive-img z-depth-3" style="border-radius:12px;">
+            </div>
+        </section>
+
+        <!-- Problem / Explanation -->
+        <section class="problem row valign-wrapper">
+            <div class="col s12 m6 push-m6">
+                <h2>Why Our Diet Often Lacks Essential Nutrients</h2>
+                <p>Many people struggle to meet their daily nutritional requirements. Deficiencies in vitamins such
+                    as
+                    C, A, K, and minerals like magnesium can lead to fatigue, poor immunity, and long-term health
+                    issues. Even with a balanced diet, absorption of micronutrients can be low due to food
+                    preparation
+                    or digestion inefficiencies.</p>
+                <p>Juices bridge the gap by offering a concentrated source of nutrients that are quickly absorbed,
+                    helping the body recover from deficits and maintain optimal function.</p>
+            </div>
+            <div class="col s12 m6 pull-m6">
+                <img src="img/Firefly_glass of juice Hydrating watermelon and fresh mint for summer days(Minty Melon) 105513.jpg"
+                    alt="Unhealthy Food" class="responsive-img z-depth-2" style="border-radius:12px;">
+            </div>
+        </section>
+
+        <section class="test container on-dark">
+            <h2 class="h2 center-align">Daily Health Check</h2>
+            <div class="col l12">
+                <form id="healthForm" class="col s12">
+                    <div class="row">
+                        <!-- Date (must be today) -->
+                        <div class="input-field col s12 m6 l12">
+                            <input id="entryDate" type="date" class="validate" required>
+                            <label for="entryDate">Date</label>
+                        </div>
+
+                        <!-- Water intake -->
+                        <div class="input-field col s12 m6 l12">
+                            <label for="water">Water intake (liters) — today (0–24)</label>
+                            <input id="water" type="number" step="0.1" min="0" max="24" class="validate" required>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Sleep -->
+                        <div class="input-field col s12 m6">
+                            <input id="sleep" type="number" min="0" max="24" step="0.25" class="validate" required>
+                            <label for="sleep">Sleep (hours) — past 24h</label>
+                        </div>
+
+                        <!-- Steps -->
+                        <div class="input-field col s12 m6">
+                            <input id="steps" type="number" min="0" max="300000" class="validate" required>
+                            <label for="steps">Steps walked — today (0–300000)</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <p class="col s12">Did you eat these meals today?</p>
+
+                        <!-- Breakfast radios -->
+                        <div class="col s12 m6">
+                            <label>Breakfast</label>
+                            <p>
+                                <label>
+                                    <input name="breakfast" type="radio" value="yes" checked />
+                                    <span>Yes</span>
+                                </label>
+                                <label style="margin-left:1em;">
+                                    <input name="breakfast" type="radio" value="no" />
+                                    <span>No</span>
+                                </label>
+                            </p>
+                        </div>
+
+                        <!-- Lunch radios -->
+                        <div class="col s12 m6">
+                            <label>Lunch</label>
+                            <p>
+                                <label>
+                                    <input name="lunch" type="radio" value="yes" checked />
+                                    <span>Yes</span>
+                                </label>
+                                <label style="margin-left:1em;">
+                                    <input name="lunch" type="radio" value="no" />
+                                    <span>No</span>
+                                </label>
+                            </p>
+                        </div>
+
+                        <!-- Dinner radios -->
+                        <div class="col s12 m6">
+                            <label>Dinner</label>
+                            <p>
+                                <label>
+                                    <input name="dinner" type="radio" value="yes" checked />
+                                    <span>Yes</span>
+                                </label>
+                                <label style="margin-left:1em;">
+                                    <input name="dinner" type="radio" value="no" />
+                                    <span>No</span>
+                                </label>
+                            </p>
+                        </div>
+
+                        <!-- Snack radios -->
+                        <div class="col s12 m6">
+                            <label>Snack</label>
+                            <p>
+                                <label>
+                                    <input name="snack" type="radio" value="yes" />
+                                    <span>Yes</span>
+                                </label>
+                                <label style="margin-left:1em;">
+                                    <input name="snack" type="radio" value="no" checked />
+                                    <span>No</span>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row center">
+                        <button class="btn tooltipped green darken-1" type="submit" data-position="bottom"
+                            data-tooltip="Submit your answers">Submit</button>
+                        <button id="viewHistoryBtn" type="button" class="btn-flat tooltipped" data-position="bottom"
+                            data-tooltip="View your history" style="margin-left:1rem;">View
+                            history</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Extended Lifestyle & Performance Inputs -->
+        <section class="test container on-dark">
+            <h5>Extended Lifestyle Tracking</h5>
+            <div class="row">
+                <!-- Nutrition -->
+                <div class="col s12 m6">
+                    <div class="card-panel">
+                        <h6><i class="material-icons left ">local_hospital</i>Nutrition</h6>
+                        <div class="input-field">
+                            <input id="nutritionKcal" type="number" min="0" max="20000" step="10">
+                            <label for="nutritionKcal">Approximate total kcal today</label>
+                        </div>
+                        <p style="margin:.4rem 0 .2rem">Vitamins consumed</p>
+                        <p class="vitamin-group">
+                            <label><input type="checkbox" class="vitamin-check" value="A"><span>A</span></label>
+                            <label style="margin-left:1em"><input type="checkbox" class="vitamin-check"
+                                    value="C"><span>C</span></label>
+                            <label style="margin-left:1em"><input type="checkbox" class="vitamin-check"
+                                    value="D"><span>D</span></label>
+                            <label style="margin-left:1em"><input type="checkbox" class="vitamin-check"
+                                    value="B12"><span>B12</span></label>
+                        </p>
+                    </div>
+                </div>
+                <!-- Training -->
+                <div class="col s12 m6">
+                    <div class="card-panel">
+                        <h6><i class="material-icons left">fitness_center</i>Training</h6>
+                        <div class="input-field">
+                            <select id="trainingType">
+                                <option value="none" selected>None</option>
+                                <option value="tai_chi">Tai Chi</option>
+                                <option value="run">Run</option>
+                                <option value="strength">Strength</option>
+                                <option value="yoga">Yoga</option>
+                                <option value="mobility">Mobility</option>
+                            </select>
+                            <label>Training Type</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="trainingMinutes" type="number" min="0" max="1440" step="1">
+                            <label for="trainingMinutes">Minutes Trained</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Breathing -->
+                <div class="col s12 m6">
+                    <div class="card-panel">
+                        <h6><i class="material-icons left">air</i>Breathing</h6>
+                        <div class="input-field">
+                            <select id="breathingType">
+                                <option value="none" selected>None</option>
+                                <option value="box">Box Breathing</option>
+                                <option value="diaphragmatic">Diaphragmatic</option>
+                                <option value="alternate_nostril">Alternate Nostril</option>
+                            </select>
+                            <label>Breathing Practice</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="breathingMinutes" type="number" min="0" max="600" step="1">
+                            <label for="breathingMinutes">Minutes Practiced</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cold Hardening -->
+                <div class="col s12 m6">
+                    <div class="card-panel">
+                        <h6><i class="material-icons left">ac_unit</i>Cold Hardening</h6>
+                        <div class="input-field">
+                            <select id="coldMethod">
+                                <option value="none" selected>None</option>
+                                <option value="cold_shower">Cold Shower</option>
+                                <option value="cold_bath">Cold Bath</option>
+                                <option value="outside_exposure">Outside Exposure</option>
+                            </select>
+                            <label>Method</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="coldMinutes" type="number" min="0" max="300" step="1">
+                            <label for="coldMinutes">Minutes Exposure</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Juice Benefits -->
+                <div class="col s12 m6">
+                    <div class="card-panel">
+                        <h6><i class="material-icons left">opacity</i>Juice Intake</h6>
+                        <div class="input-field">
+                            <select id="juiceType">
+                                <option value="none" selected>None</option>
+                                <option value="green">Green</option>
+                                <option value="beet">Beet</option>
+                                <option value="citrus">Citrus</option>
+                                <option value="tropical">Tropical</option>
+                                <option value="custom">Custom / Other</option>
+                            </select>
+                            <label>Juice Type</label>
+                        </div>
+                        <div class="input-field">
+                            <select id="juiceFrequency">
+                                <option value="none" selected>None</option>
+                                <option value="occasional">Occasional</option>
+                                <option value="daily">Daily</option>
+                                <option value="multiple_daily">Multiple Daily</option>
+                            </select>
+                            <label>Frequency</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sleep Quality -->
+                <div class="col s12 m6">
+                    <div class="card-panel">
+                        <h6><i class="material-icons left">hotel</i>Sleep Quality</h6>
+                        <p>Last night sleep pattern</p>
+                        <label>
+                            <input name="sleepQuality" type="radio" value="undisturbed" checked />
+                            <span>Undisturbed</span>
+                        </label>
+                        <label style="margin-left:1em;">
+                            <input name="sleepQuality" type="radio" value="disturbed" />
+                            <span>Disturbed</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional lifestyle questions -->
+        <section class="test container on-dark">
+            <!-- Legal / Safety Warning -->
+            <div class="card red">
+                <div class="card-content">
+                    <span class="card-title"><i class="material-icons left">warning</i>Important
+                        safety & legal notice</span>
+                    <p class="red-text text-darken-2">The information collected here is for self-monitoring only and is
+                        not a substitute for professional medical, addiction or legal advice. If you are dependent on
+                        substances, concerned about addiction, or are in immediate danger, contact emergency services or
+                        a qualified health professional immediately. For addiction support in the U.S. you can visit <a
+                            href="https://www.samhsa.gov/find-help/national-helpline" target="_blank"
+                            rel="noopener">SAMHSA National Helpline</a> or your local health services.</p>
+                    <p class="grey-text">By checking the box below you acknowledge this is not medical advice and you
+                        consent to provide this information for personal tracking only.</p>
+                    <p>
+                        <label>
+                            <input type="checkbox" id="consentSubstances" />
+                            <span>I acknowledge this is not medical advice and confirm I understand the risks.</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <h5>Lifestyle & Substance Use (optional)</h5>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <select id="smokingPattern">
+                                <option value="never" selected>Never</option>
+                                <option value="every_day">Every day</option>
+                                <option value="when_possible">When possible</option>
+                                <option value="occasionally">Occasionally</option>
+                                <option value="one_per_year">One per year</option>
+                            </select>
+                            <label>Smoking pattern</label>
+                        </div>
+
+                        <div class="col s12 m6">
+                            <p>Smoked in last 24 hours?</p>
+                            <label>
+                                <input name="smoked24" type="radio" value="no" checked />
+                                <span>No</span>
+                            </label>
+                            <label style="margin-left:1em;">
+                                <input name="smoked24" type="radio" value="yes" />
+                                <span>Yes</span>
+                            </label>
+                        </div>
+
+                        <div class="input-field col s12 m6" id="cigarettesWrap" style="display:none;">
+                            <input id="cigarettes" type="number" min="0" max="500" step="1">
+                            <label for="cigarettes">How many cigarettes in last 24 hours?</label>
+                        </div>
+
+                        <div class="col s12 m6">
+                            <p>Do you feel weak?</p>
+                            <label>
+                                <input name="feelWeak" type="radio" value="no" checked />
+                                <span>No</span>
+                            </label>
+                            <label style="margin-left:1em;">
+                                <input name="feelWeak" type="radio" value="yes" />
+                                <span>Yes</span>
+                            </label>
+                        </div>
+
+                        <div class="input-field col s12 m6">
+                            <input id="alcoholUnits" type="number" min="0" max="100" step="0.1">
+                            <label for="alcoholUnits">Alcohol units consumed (last 24h)</label>
+                        </div>
+
+                        <div class="col s12 m6">
+                            <p>Any drugs?</p>
+                            <label>
+                                <input name="drugs" type="radio" value="no" checked />
+                                <span>No</span>
+                            </label>
+                            <label style="margin-left:1em;">
+                                <input name="drugs" type="radio" value="yes" />
+                                <span>Yes</span>
+                            </label>
+                        </div>
+
+                        <div class="input-field col s12" id="drugTypeWrap" style="display:none;">
+                            <input id="drugType" type="text">
+                            <label for="drugType">If yes, what type?</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!---  ============================================================================= 
+        =============================  MODAL WINDOW ====================================================================================-->
+
+
+
+        <!-- Result Modal (Materialize) -->
+        <div id="resultModal" class="modal">
+            <div class="modal-content">
+                <h4>Your Daily Health Summary</h4>
+                <canvas id="resultChart" height="100"></canvas>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <h6>Risk over time</h6>
+                        <canvas id="riskChart" height="80"></canvas>
+                    </div>
+                    <div class="col s12 m6">
+                        <h6>Health score trend</h6>
+                        <canvas id="healthTrendChart" height="80"></canvas>
+                    </div>
+                </div>
+                <p id="healthAdvice" style="margin-top:1rem;"></p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close btn-flat">Close</a>
+            </div>
+        </div>
+
+        <!-- History Modal -->
+        <div id="historyModal" class="modal">
+            <div class="modal-content">
+                <h4>Saved Daily Health Entries</h4>
+                <div class="row">
+                    <div class="col s12">
+                        <div id="historyListContainer">
+                            <!-- Filled by JS: table of entries -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" id="exportHistoryBtn" class="modal-close btn-flat">Export CSV</a>
+                <a href="#!" id="clearHistoryBtn" class="modal-close btn-flat red-text">Clear All</a>
+                <a href="#!" class="modal-close btn-flat">Close</a>
+            </div>
+        </div>
+
+        <!-- Evidence / Research Cards -->
+        <section class="evidence section">
+            <h2 class="center">Scientific Evidence & Benefits</h2>
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="img/vitamin-c.jpg" alt="Vitamin C">
+                            <span class="card-title"><i class="material-icons left heading h3 text-darken-4"
+                                    style="font-size:2.7em;vertical-align:middle;">local_hospital</i>Vitamin C
+                                Boost</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Vitamin C enhances immune function, supports skin health, and acts as a powerful
+                                antioxidant. Citrus-based juices are a convenient daily source.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="img/antioxidants22.jpg" alt="Antioxidants">
+                            <span class="card-title"><i class="material-icons left">science</i>Antioxidants</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Beets, carrots, and berries provide antioxidants that reduce oxidative stress,
+                                support
+                                cardiovascular health, and improve recovery after exercise.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="img/hydration22.jpg" alt="Hydration">
+                            <span class="card-title"><i class="material-icons left">opacity</i>Hydration &
+                                Energy</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Juices are primarily water, aiding hydration, electrolyte balance, and maintaining
+                                energy
+                                levels throughout the day.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonies -->
+        <section class="testimony section">
+            <h2 class="h2">Real-Life Experiences</h2>
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="card hoverable">
+                        <div class="card-content">
+                            <p>"Incorporating a green juice every morning has transformed my energy levels. I feel
+                                lighter and more focused throughout the day."</p>
+                            <span class="card-title"><i class="material-icons left"
+                                    style="font-size:1.2em;vertical-align:middle;">emoji_nature</i>— Eva, Nutrition
+                                Enthusiast</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card hoverable">
+                        <div class="card-content">
+                            <p>"Drinking a fresh beetroot and apple juice helped improve my post-workout recovery
+                                and
+                                reduced inflammation in my joints."</p>
+                            <span class="card-title"><i class="material-icons left"
+                                    style="font-size:1.2em;vertical-align:middle;">fitness_center</i>— Jakub, Health
+                                Blogger</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card hoverable">
+                        <div class="card-content">
+                            <p>"Juices make it easy to add vegetables to my kids’ diet. They love the fruity
+                                flavors,
+                                and I’m confident they get essential nutrients."</p>
+                            <span class="card-title"><i class="material-icons left"
+                                    style="font-size:1.2em;vertical-align:middle;">child_care</i>— Lena, Mom &
+                                Wellness
+                                Advocate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Juice Recipes Grid -->
+        <section class="juice-tiles section">
+            <h2 class="center">Juice Recipes</h2>
+            <div class="juice-links-wrapper">
+                <div class="juice-tile-btn card">
+                    <div class="card-body card-hoverable">
+                        <div class="card-image">
+                            <a href="recipe-classic-green-juice.html" title="Classic Green Juice">
+                                <img src="img/spinach.jpg" alt="Classic Green Juice">
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title juice-title-center"><i class="material-icons"
+                                    aria-hidden="true">eco</i>Classic Green Juice</span>
+                            <p>Kale, spinach, cucumber, celery, green apple, and lemon.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="juice-tile-btn card">
+                    <div class="card-body card-hoverable">
+                        <div class="card-image">
+                            <a href="recipe-carrot-orange-ginger.html" title="Carrot Orange Ginger">
+                                <img src="img/Firefly_glass of juice Orange, lemon, and a kick of ginger to refresh your senses(Citrus Char 645373.jpg"
+                                    alt="Carrot Orange Ginger">
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title juice-title-center"><i class="material-icons"
+                                    aria-hidden="true">local_florist</i>Carrot Orange Ginger</span>
+                            <p>Carrots, oranges, and a touch of fresh ginger for a spicy kick.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="juice-tile-btn card">
+                    <div class="card-body card-hoverable">
+                        <div class="card-image">
+                            <a href="recipe-beet-red-apple.html" title="Beet Red Apple">
+                                <img src="img/Cooler-fresh-cranberries-redapple.jpg" alt="Red Apple">
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title juice-title-center"><i class="material-icons"
+                                    aria-hidden="true">favorite</i>Beet Red Apple</span>
+                            <p>Beetroot, red apple, and a few celery stalks for natural sweetness.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="juice-tile-btn card">
+                    <div class="card-body card-hoverable">
+                        <div class="card-image">
+                            <a href="recipe-tropical-blend.html" title="Tropical Blend">
+                                <img src="img/pinneapple.jpg" alt="Tropical Blend">
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title juice-title-center"><i class="material-icons"
+                                    aria-hidden="true">beach_access</i>Tropical Blend</span>
+                            <p>Mango, pineapple, and passion fruit — a refreshing tropical treat.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="juice-tile-btn card">
+                    <div class="card-body card-hoverable">
+                        <div class="card-image">
+                            <a href="recipe-sunrise-citrus.html" title="Sunrise Citrus Blend">
+                                <img src="img/Firefly_glass of juice A sunny blend of mango, pineapple, and passion fruit(Tropical Twist) 228826.jpg"
+                                    alt="Sunrise Citrus Blend">
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title juice-title-center"><i class="material-icons"
+                                    aria-hidden="true">wb_sunny</i>Sunrise Citrus Blend</span>
+                            <p>Oranges, grapefruit, and carrots for a vibrant morning boost.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="center-align" style="margin-top: 1.5rem;">
+                <a class="btn green darken-1 waves-effect waves-light" href="article-juices.html"
+                    title="See all Juice articles">See all Juices</a>
+            </div>
+        </section>
+
+        <!-- Summary & Conclusion -->
+        <section class="summary-conclusion row">
+            <div class="col s12 m6">
+                <h2>Summary</h2>
+                <p>Fresh juices are a practical, delicious way to enhance your diet, deliver essential nutrients,
+                    and
+                    maintain hydration. Scientific research supports their ability to provide antioxidants,
+                    vitamins,
+                    and minerals crucial for energy, immunity, and overall wellbeing. When combined with whole
+                    foods,
+                    they form an excellent complement to a balanced lifestyle.</p>
+            </div>
+            <div class="col s12 m6">
+                <h2>Conclusion</h2>
+                <p>Integrating fresh juices into your daily routine can be transformative. Experiment with different
+                    fruits and vegetables, tailor recipes to your taste, and enjoy the immediate benefits of
+                    improved
+                    hydration, energy, and nutrition. Remember, moderation is key — juices should supplement, not
+                    replace, whole foods for optimal health.</p>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6">
+                    <h5 class="white-text">HealthyJuices</h5>
+                    <p class="grey-text text-lighten-4">Practical guides and friendly nutrition information.</p>
+                </div>
+
+                <div class="col s12 m6 center-align hide-on-small-only">
+                    <h5 class="white-text">Topics</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="article-juices.html">Juices</a></li>
+                        <li><a class="grey-text text-lighten-3" href="article-drinking.html">Drinking</a></li>
+                        <li><a class="grey-text text-lighten-3" href="article-eating.html">Eating</a></li>
+                        <li><a class="grey-text text-lighten-3" href="article-movement.html">Movement</a></li>
+                        <li><a class="grey-text text-lighten-3" href="article-sleep.html">Sleep</a></li>
+                        <li><a class="grey-text text-lighten-3" href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="col s12 m4 offset-m2 center-align">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="pages/service/privacy.html">Privacy</a></li>
+                        <li><a class="grey-text text-lighten-3" href="pages/service/terms.html">Terms</a></li>
+                        <li><a class="grey-text text-lighten-3" href="about.html">About</a></li>
+                    </ul>
+                    <a href="#" id="backToTop" class="btn-floating tooltiped hoverable btn-large green-text"
+                        aria-label="Back to top" title="Back to top" data-position="bottom" data-tooltip="Back to top">
+                        <i class="material-icons">arrow_upward</i>
+                    </a>
+                </div>
+
+                <div class="col s12 m4 l4">
+                    <h5 class="white-text">Get in touch</h5>
+                    <p class="grey-text text-lighten-4">Got a question or feedback? We'd love to hear from you.</p>
+                    <p>
+                        <a class="grey-text text-lighten-3" href="contact.html" title="Contact page"><i
+                                class="material-icons left" aria-hidden="true">chat</i>Contact us</a>
+                    </p>
+                    <p>
+                        <a class="grey-text text-lighten-3" href="mailto:hello@healthyjuices.example"
+                            title="Email us"><i class="material-icons left" aria-hidden="true">alternate_email</i>Email:
+                            hello@healthyjuices.example</a>
+                    </p>
+                    <p class="grey-text text-lighten-4" style="margin-top:.5rem;">Follow along:</p>
+                    <p class="social-links flow-text">
+                        <a class="grey-text text-lighten-3" href="#" aria-label="Instagram" title="Instagram"><i
+                                class="material-icons left" aria-hidden="true">camera_alt</i>Instagram</a>
+                        <span class="grey-text text-lighten-1" style="margin:0 .5rem;"></span>
+                        <a class="grey-text text-lighten-3" href="#" aria-label="YouTube" title="YouTube"><i
+                                class="material-icons left" aria-hidden="true">ondemand_video</i>YouTube</a>
+                        <span class="grey-text text-lighten-1" style="margin:0 .5rem;"></span>
+                    </p>
+                    <p class="grey-text text-lighten-2" style="margin-top:.5rem; font-size:.9rem;">Content is for
+                        informational purposes only and not a substitute for professional medical advice.</p>
+                </div>
+            </div>
+            <div class="container">© 2025 HealthyJuices. All rights reserved. | Made with ❤️ for a healthier lifestyle
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/sidenav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+    <!-- health form behavior moved to external file: js/test_form_modal.js -->
+    <script src="js/test_form_modal.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const backToTop = document.getElementById('backToTop');
+            if (backToTop) {
+                backToTop.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

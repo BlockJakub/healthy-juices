@@ -1,0 +1,76 @@
+# === OS / System files ===
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# === Editors & IDEs ===
+.vscode/
+.idea/
+*.code-workspace
+
+# === Dependencies ===
+# Node
+node_modules/
+# PHP (Composer)
+vendor/
+# Composer PHAR (if used)
+composer.phar
+
+# === Build outputs & caches ===
+dist/
+build/
+.cache/
+.tmp/
+.parcel-cache/
+.next/
+out/
+coverage/
+.cypress/
+.sass-cache/
+
+# === Logs & debug ===
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.pid
+*.seed
+*.pid.lock
+
+# === Environment & secrets ===
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# === Runtime / uploads / temp ===
+uploads/
+storage/
+tmp/
+temp/
+cache/
+
+# === PHP tooling caches ===
+.phpunit.result.cache
+phpunit.xml.cache
+.php-cs-fixer.cache
+
+# === Misc editor/merge artifacts ===
+*.swp
+*.swo
+*.orig
+*.bak
+sftp-config.json
+
+# === Project-specific ===
+# Keep example config, ignore the real one with credentials
+php/config.php

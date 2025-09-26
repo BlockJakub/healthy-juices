@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us – HealthyJuices</title>
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Google Fonts & Material Icons -->
+    <link rel="stylesheet" href="https://use.typekit.net/kcj1oil.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            align-items: stretch;
+            justify-content: center;
+        }
+
+        .contact-row>.col.s12.m6 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact-form-card,
+        .contact-row .card.z-depth-2 {
+            max-width: 520px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 992px) {
+            .contact-row {
+                flex-direction: column !important;
+                gap: 1.5rem !important;
+            }
+
+            .contact-form-card,
+            .contact-row .card.z-depth-2 {
+                max-width: 100% !important;
+            }
+
+            .contact-row>.col.s12.m6 {
+                justify-content: stretch;
+            }
+        }
+    </style>
+</head>
+
+<body class="body">
+    <header>
+        <nav class="green darken-1">
+            <div class="nav-wrapper container">
+                <a href="index.html" class="brand-logo">HealthyJuices</a>
+                <a href="#" data-target="mobile-menu" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="article-juices.html">Juices</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="article-juices.html">Juices</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </header>
+    <main class="container section">
+        <div class="contact-hero center-align">
+            <i class="material-icons large green-text text-darken-2"
+                style="font-size:3.5rem;margin-top:2rem;">mail_outline</i>
+            <h1 style="margin-bottom:0.2em;">Contact Us</h1>
+            <p class="flow-text" style="max-width:540px;margin:0 auto 2.5rem auto;">We'd love to hear from you! Fill out
+                the form below or find us on the map. Our team will get back to you as soon as possible.</p>
+        </div>
+        <div class="row contact-row" style="display:flex;flex-wrap:wrap;gap:2.5rem;align-items:stretch;">
+            <div class="col-6">
+                <div class="card contact-form-card z-depth-2">
+                    <form id="contact-form" style="padding:2rem 1.5rem 1.5rem 1.5rem;">
+                        <div class="input-field">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="name" name="name" type="text" required autocomplete="name">
+                            <label for="name">Your Name</label>
+                        </div>
+                        <div class="input-field">
+                            <i class="material-icons prefix">email</i>
+                            <input id="email" name="email" type="email" required autocomplete="email">
+                            <label for="email">Your Email</label>
+                        </div>
+                        <div class="input-field">
+                            <i class="material-icons prefix">message</i>
+                            <textarea id="message" name="message" class="materialize-textarea" required
+                                style="min-height:90px;"></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <div class="input-field">
+                            <i class="material-icons prefix">location_on</i>
+                            <input id="location" name="location" type="text" readonly>
+                            <label for="location">Your Location (auto-filled)</label>
+                        </div>
+                        <div id="contact-success" class="card-panel green lighten-4 green-text text-darken-4"
+                            style="display:none;margin-bottom:1em;">
+                            <i class="material-icons left">check_circle</i>Thank you! Your message has been sent.
+                        </div>
+                        <button class="btn green darken-1 waves-effect waves-light" type="submit"
+                            style="margin-top:0.5em;">
+                            <i class="material-icons left">send</i>Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class=" card z-depth-2" style="padding:1.5rem 1.5rem 1rem 1.5rem;">
+                    <h5 style="margin-bottom:1.2em;"><i class="material-icons left">map</i>Our Location</h5>
+                    <div id="map" style="width:100%;height:300px;border-radius:8px;"></div>
+                    <p class="grey-text" style="margin-top:1.2em;">We are based in Kennoway, Scotland.<br>Visit us or
+                        send us a message!</p>
+                    <div id="map-warning" style="color:#c62828;font-size:1rem;margin-top:0.5em;display:none;">
+                        <i class="material-icons left" style="vertical-align:middle;">error_outline</i>
+                        Map failed to load. Please check your Google Maps API key.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6">
+                    <h5 class="white-text">HealthyJuices</h5>
+                    <p class="grey-text text-lighten-4">Practical guides and friendly nutrition information.</p>
+                </div>
+                <div class="col s12 m4 offset-m2">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="privacy.html">Privacy</a></li>
+                        <li><a class="grey-text text-lighten-3" href="terms.html">Terms</a></li>
+                        <li><a class="grey-text text-lighten-3" href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">© 2025 HealthyJuices. All rights reserved. <a href="pages/service/terms.html"
+                    class="grey-text text-lighten-4 right">Legal</a></div>
+        </div>
+    </footer>
+    <!-- JS Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/app.js"></script>
+    <script src="js/sidenav.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
+            // Contact form submit handler (demo only)
+            var form = document.getElementById('contact-form');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    document.getElementById('contact-success').style.display = 'block';
+                    setTimeout(function () {
+                        document.getElementById('contact-success').style.display = 'none';
+                        form.reset();
+                    }, 3500);
+                });
+            }
+        });
+        // Geolocation for autofill
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (pos) {
+                var lat = pos.coords.latitude.toFixed(5);
+                var lng = pos.coords.longitude.toFixed(5);
+                document.getElementById('location').value = lat + ", " + lng;
+                var event = new Event('change');
+                document.getElementById('location').dispatchEvent(event);
+                // Show marker on map
+                if (window.map && window.google) {
+                    var myLatLng = { lat: parseFloat(lat), lng: parseFloat(lng) };
+                    new google.maps.Marker({ position: myLatLng, map: map, title: "You are here!" });
+                    map.setCenter(myLatLng);
+                }
+            });
+        }
+        // Google Maps init
+        function initMap() {
+            var kennoway = { lat: 56.2000, lng: -3.0000 };
+            window.map = new google.maps.Map(document.getElementById('map'), {
+                center: kennoway,
+                zoom: 12,
+                styles: [
+                    { elementType: 'geometry', stylers: [{ color: '#e9f5e1' }] },
+                    { elementType: 'labels.text.fill', stylers: [{ color: '#388e3c' }] },
+                    { elementType: 'labels.text.stroke', stylers: [{ color: '#ffffff' }] },
+                    { featureType: 'water', stylers: [{ color: '#b2dfdb' }] },
+                    { featureType: 'poi.park', stylers: [{ color: '#c8e6c9' }] }
+                ]
+            });
+            new google.maps.Marker({ position: kennoway, map: map, title: "HealthyJuices HQ" });
+        }
+        window.initMap = initMap;
+    </script>
+    <!-- Replace YOUR_GOOGLE_MAPS_API_KEY with your valid Google Maps API key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer
+        onerror="document.getElementById('map-warning').style.display='block';"></script>
+</body>
+
+</html>
