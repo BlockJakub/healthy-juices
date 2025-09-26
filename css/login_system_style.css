@@ -1,0 +1,934 @@
+/*
+ * File: css/login_system_style.css
+ * Author: Healthy Blog Team
+ * Created: 2025-09-25
+ * Description: Core styling for auth pages and dashboard (advice, progress bars, badges, metrics).
+ * Notes: Color tokens chosen for accessibility and semantic mapping (risk, hydration, progress states).
+ */
+/* Styles for Login / Register pages */
+body.auth-page {
+    background: linear-gradient(180deg, #f1f8f7 0%, #ffffff 60%);
+    font-family: 'proxima-nova', 'Helvetica Neue', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 480px;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(18, 65, 46, 0.08);
+    overflow: hidden;
+}
+
+.auth-card .card-content {
+    padding: 2rem;
+}
+
+.auth-header {
+    background: linear-gradient(90deg, #2e7d32, #66bb6a);
+    color: white;
+    padding: 1rem 1.5rem;
+}
+
+.auth-header h4 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.auth-subtle {
+    color: #2e7d32;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.auth-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+#loginMsg,
+#regMsg {
+    min-height: 1.2em;
+    color: #c62828;
+    margin-top: 0.5rem;
+}
+
+/* make inputs full width and comfortable */
+.auth-card .input-field input {
+    font-size: 1rem;
+    padding: .75rem;
+}
+
+.auth-card .btn {
+    width: auto;
+    min-width: 140px;
+}
+
+@media (max-width: 600px) {
+    .auth-card {
+        margin: 1rem;
+    }
+}
+
+/* ================= Dashboard Additions ================= */
+body.dashboard-page {
+    background: #fafdfc;
+    font-family: 'proxima-nova', 'Helvetica Neue', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard main.dashboard {
+    flex: 1 0 auto;
+}
+
+.dash-title {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+    margin-top: 1.5rem;
+}
+
+.dash-subtle {
+    color: #2e7d32;
+    margin-top: .25rem;
+    font-size: 0.95rem;
+}
+
+.metric-card {
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ffffff 0%, #f2f8f5 100%);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dynamic metric states */
+.metric-card.state-danger {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe3e3 100%);
+    box-shadow: 0 4px 14px rgba(198, 40, 40, 0.25);
+}
+
+.metric-card.state-danger .metric-icon {
+    color: #c62828;
+}
+
+.metric-card.state-danger .metric-value {
+    color: #b71c1c;
+}
+
+.metric-card.state-warn {
+    background: linear-gradient(135deg, #fff9e6 0%, #ffefc2 100%);
+    box-shadow: 0 4px 14px rgba(255, 143, 0, 0.25);
+}
+
+.metric-card.state-warn .metric-icon {
+    color: #ff8f00;
+}
+
+.metric-card.state-warn .metric-value {
+    color: #e65100;
+}
+
+.metric-card.state-good {
+    background: linear-gradient(135deg, #f1fbf3 0%, #e0f7ea 100%);
+    box-shadow: 0 4px 14px rgba(46, 125, 50, 0.18);
+}
+
+.metric-card.state-good .metric-icon {
+    color: #2e7d32;
+}
+
+.metric-card.state-good .metric-value {
+    color: #1b5e20;
+}
+
+.metric-card.state-excellent {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e0f0ff 100%);
+    box-shadow: 0 4px 14px rgba(21, 101, 192, 0.25);
+}
+
+.metric-card.state-excellent .metric-icon {
+    color: #1565c0;
+}
+
+.metric-card.state-excellent .metric-value {
+    color: #0d47a1;
+}
+
+.metric-card .status-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #2e7d32;
+    opacity: .9;
+}
+
+.metric-card.state-danger .status-indicator {
+    background: #c62828;
+}
+
+.metric-card.state-warn .status-indicator {
+    background: #ff8f00;
+}
+
+.metric-card.state-good .status-indicator {
+    background: #2e7d32;
+}
+
+.metric-card.state-excellent .status-indicator {
+    background: #1565c0;
+}
+
+@media (prefers-reduced-motion:no-preference) {
+    .metric-card {
+        transition: background .5s, box-shadow .5s;
+    }
+
+    .metric-card .metric-value {
+        transition: color .5s;
+    }
+}
+
+.metric-card .card-content {
+    padding: 1.1rem 1.25rem;
+}
+
+.metric-icon {
+    color: #2e7d32;
+    font-size: 1.3rem;
+    display: inline-block;
+}
+
+.metric-value {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-top: .25rem;
+}
+
+.metric-label {
+    font-size: .75rem;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    color: #4f6f60;
+    margin-top: .15rem;
+}
+
+.metric-benefit {
+    font-size: .70rem;
+    color: #335c47;
+    margin-top: .35rem;
+    line-height: 1.1;
+    letter-spacing: .4px;
+    font-weight: 500;
+}
+
+.dash-card {
+    border-radius: 12px;
+}
+
+.entries-pre {
+    max-height: 420px;
+    overflow: auto;
+    background: #10251b;
+    color: #d3f5e8;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.dash-charts .card-title {
+    font-size: 1.05rem;
+}
+
+.dash-advice {
+    list-style: disc;
+    margin-left: 1.2rem;
+}
+
+.dash-advice li {
+    margin: .35rem 0;
+    font-size: .9rem;
+}
+
+/* Advice severity */
+.dash-advice li.advice-info {
+    color: #2e7d32;
+}
+
+.dash-advice li.advice-warn {
+    color: #ff6f00;
+    font-weight: 600;
+}
+
+.dash-advice li.advice-high {
+    color: #c62828;
+    font-weight: 600;
+}
+
+/* History table */
+.history-table-wrapper {
+    overflow-x: auto;
+}
+
+.entries-table th {
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #4f6f60;
+}
+
+.entries-table td {
+    font-size: .8rem;
+    vertical-align: middle;
+}
+
+.entries-table .entry-title {
+    white-space: nowrap;
+    max-width: 260px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.score-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: .7rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.score-badge.good {
+    background: #e8f5e9;
+    color: #1b5e20;
+}
+
+.score-badge.warn {
+    background: #fff8e1;
+    color: #ff6f00;
+}
+
+.score-badge.bad {
+    background: #ffebee;
+    color: #b71c1c;
+}
+
+/* Health score categorical badges */
+.score-badge.critical {
+    background: #4a0000;
+    color: #ffb3b3;
+}
+
+.score-badge.poor {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.score-badge.fair {
+    background: #fff8e1;
+    color: #ff8f00;
+}
+
+.score-badge.goodcat {
+    /* avoid clash with existing .good */
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.score-badge.excellent {
+    background: #e8f5e9;
+    color: #1b5e20;
+    box-shadow: 0 0 0 1px #a5d6a7 inset;
+}
+
+/* Progress (unified achievements) */
+#progressLegend {
+    font-size: .65rem;
+    margin-top: .6rem;
+    color: #4f6f60;
+    line-height: 1.25;
+}
+
+.progress-controls {
+    display: flex;
+    gap: .75rem;
+    align-items: center;
+    margin: .25rem 0 .5rem;
+}
+
+.progress-controls label {
+    font-size: .65rem;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    color: #2e7d32;
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+}
+
+.badges-list.hide-completed li.completed {
+    display: none;
+}
+
+.badges-list li.progress-item .progress-meta {
+    font-size: .6rem;
+    letter-spacing: .5px;
+    margin-top: .2rem;
+    color: #546e64;
+}
+
+.score-badge.neutral {
+    background: #eceff1;
+    color: #455a64;
+}
+
+/* Goals & Progress */
+.goals-form .goal-msg {
+    margin-left: 1rem;
+    font-size: .85rem;
+}
+
+.goal-msg.success {
+    color: #2e7d32;
+}
+
+.goal-msg.error {
+    color: #c62828;
+}
+
+.progress-bars {
+    margin-top: 1rem;
+}
+
+.goal-progress {
+    margin-bottom: .75rem;
+}
+
+.gp-label {
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: .25rem;
+    color: #2e7d32;
+}
+
+.gp-bar {
+    background: #e0f2f1;
+    height: 10px;
+
+    /* Badge progress bars */
+    .badge-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: .3rem;
+    }
+
+    .badge-progress {
+        position: relative;
+        height: 6px;
+        background: #d7ede4;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .badge-progress .bp-fill {
+        display: block;
+        height: 100%;
+        background: linear-gradient(90deg, #66bb6a, #2e7d32);
+        transition: width .5s;
+    }
+
+    .badge-progress .bp-fill.warn {
+        background: linear-gradient(90deg, #ffca28, #ff8f00);
+    }
+
+    .badge-progress .bp-fill.bad {
+        background: linear-gradient(90deg, #ef5350, #c62828);
+    }
+
+    /* Very high / excellence state */
+    .badge-progress .bp-fill.highplus {
+        background: linear-gradient(90deg, #42a5f5, #1565c0);
+    }
+
+    .badges-list li.locked .badge-progress .bp-fill {
+        filter: grayscale(80%);
+        opacity: .6;
+    }
+
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gp-fill {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, #66bb6a, #2e7d32);
+    transition: width .6s;
+}
+
+.gp-fill.warn {
+    background: linear-gradient(90deg, #ffca28, #ff8f00);
+}
+
+.gp-fill.bad {
+    background: linear-gradient(90deg, #ef5350, #c62828);
+}
+
+/* Badges */
+.badges-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.badges-list li {
+    display: flex;
+    align-items: center;
+    background: #f1f8f6;
+    padding: .5rem .75rem;
+    border-radius: 8px;
+    margin-bottom: .5rem;
+    font-size: .85rem;
+}
+
+.badges-list.locked li.locked {
+    opacity: .45;
+    filter: grayscale(100%);
+}
+
+.badge-collections h6 {
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #2e7d32;
+    margin: .25rem 0 .5rem;
+    font-weight: 600;
+}
+
+.badge-celebration {
+    margin-top: .5rem;
+    background: #fff8e1;
+    border-left: 4px solid #ffb300;
+    padding: .5rem .75rem;
+    border-radius: 6px;
+    font-size: .8rem;
+    font-weight: 600;
+    color: #ff6f00;
+    animation: fadeIn .4s ease;
+}
+
+.badge-celebration.pop {
+    animation: popScale .6s ease;
+}
+
+@keyframes popScale {
+    0% {
+        transform: scale(.9);
+        opacity: 0;
+    }
+
+    40% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.badge-icon {
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    background: #2e7d32;
+    color: #fff;
+    border-radius: 50%;
+    margin-right: .5rem;
+    font-size: 1.1rem;
+}
+
+/* Wellness Breakdown */
+.breakdown-list {
+    list-style: disc;
+    margin-left: 1.2rem;
+    font-size: .85rem;
+}
+
+.breakdown-list li {
+    margin: .35rem 0;
+}
+
+.did-you-know {
+    margin-top: 1rem;
+    padding: .75rem 1rem;
+    font-size: .8rem;
+    background: #fffde7;
+    border-left: 4px solid #ffb300;
+    border-radius: 6px;
+}
+
+/* Export */
+.export-actions {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: .5rem;
+}
+
+.export-btn {
+    color: #2e7d32 !important;
+    font-size: .8rem;
+}
+
+.export-btn i {
+    font-size: 1rem;
+}
+
+.export-msg {
+    font-size: .75rem;
+    color: #2e7d32;
+}
+
+/* Entry History List */
+.entry-history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: .75rem;
+    max-height: 340px;
+    overflow-y: auto;
+}
+
+.entry-history-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem;
+    padding: .4rem .55rem;
+    background: #f5faf8;
+    border-radius: 6px;
+    margin-bottom: .4rem;
+}
+
+.entry-h-date {
+    font-weight: 600;
+    color: #2e7d32;
+}
+
+.entry-h-metric {
+    display: inline-flex;
+    align-items: center;
+    gap: .2rem;
+}
+
+.entry-h-metric i {
+    font-size: 1rem;
+}
+
+.score-badge.inline {
+    padding: .15rem .4rem;
+    font-size: .55rem;
+    letter-spacing: .5px;
+    margin-left: .25rem;
+}
+
+/* Tooltip */
+.tooltip-trigger {
+    position: relative;
+    cursor: help;
+    display: inline-flex;
+    align-items: center;
+}
+
+.tooltip-panel {
+    position: absolute;
+    z-index: 50;
+    min-width: 160px;
+    max-width: 220px;
+    background: #263238;
+    color: #eceff1;
+    font-size: .6rem;
+    line-height: 1.25;
+    padding: .5rem .6rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+    top: 100%;
+    left: 0;
+    margin-top: .35rem;
+    display: none;
+}
+
+.tooltip-panel:focus,
+.tooltip-trigger:focus+.tooltip-panel {
+    display: block;
+}
+
+.tooltip-trigger:focus {
+    outline: 2px solid #1565c0;
+    outline-offset: 2px;
+}
+
+.tooltip-trigger[aria-expanded="true"]+.tooltip-panel {
+    display: block;
+}
+
+/* BMI Calculator */
+.bmi-form .bmi-msg {
+    margin-left: 1rem;
+    font-size: .8rem;
+}
+
+.bmi-msg.error {
+    color: #c62828;
+}
+
+.bmi-result {
+    margin-top: .75rem;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.bmi-result.under {
+    color: #1565c0;
+}
+
+.bmi-result.normal {
+    color: #2e7d32;
+}
+
+.bmi-result.over {
+    color: #ff8f00;
+}
+
+.bmi-result.obese {
+    color: #c62828;
+}
+
+.bmi-scale {
+    margin-top: .75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+    font-size: .65rem;
+}
+
+.bmi-scale .bmi-band {
+    background: #eceff1;
+    padding: .25rem .5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+.bmi-scale .bmi-band.under {
+    background: #e3f2fd;
+    color: #0d47a1;
+}
+
+.bmi-scale .bmi-band.normal {
+    background: #e8f5e9;
+    color: #1b5e20;
+}
+
+.bmi-scale .bmi-band.over {
+    background: #fff8e1;
+    color: #ff8f00;
+}
+
+.bmi-scale .bmi-band.obese {
+    background: #ffebee;
+    color: #b71c1c;
+}
+
+@media (max-width: 600px) {
+    .metric-value {
+        font-size: 1.3rem;
+    }
+
+    .dash-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* =============================================
+   Palette / Typography Overrides (Design Tokens)
+   Added: 2025-09-25 — unify with global style.css tokens
+   These override earlier hard-coded colors without risky in-place edits.
+   ============================================= */
+
+body.dashboard-page {
+    background: var(--color-bg);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+}
+
+.metric-card {
+    background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
+    box-shadow: 0 4px 14px rgba(0 0 0 / 0.06);
+}
+
+.metric-card .metric-icon {
+    color: var(--color-primary-600);
+}
+
+.metric-card.state-danger {
+    background: linear-gradient(135deg, var(--color-danger-50) 0%, #ffd6d6 100%);
+}
+
+.metric-card.state-warn {
+    background: linear-gradient(135deg, var(--color-warn-50) 0%, #ffe4b3 100%);
+}
+
+.metric-card.state-good {
+    background: linear-gradient(135deg, var(--color-good-50) 0%, #d5f1dc 100%);
+}
+
+.metric-card.state-excellent {
+    background: linear-gradient(135deg, var(--color-excellent-50) 0%, #d6e9fa 100%);
+}
+
+.metric-card.state-danger .metric-icon {
+    color: var(--color-danger-600);
+}
+
+.metric-card.state-warn .metric-icon {
+    color: var(--color-warn-600);
+}
+
+.metric-card.state-good .metric-icon {
+    color: var(--color-good-600);
+}
+
+.metric-card.state-excellent .metric-icon {
+    color: var(--color-excellent-600);
+}
+
+.metric-card .status-indicator {
+    background: var(--color-good-600);
+}
+
+.metric-card.state-danger .status-indicator {
+    background: var(--color-danger-600);
+}
+
+.metric-card.state-warn .status-indicator {
+    background: var(--color-warn-600);
+}
+
+.metric-card.state-good .status-indicator {
+    background: var(--color-good-600);
+}
+
+.metric-card.state-excellent .status-indicator {
+    background: var(--color-excellent-600);
+}
+
+/* Advice severity recolor with tokens */
+.dash-advice li.advice-info {
+    color: var(--color-good-600);
+}
+
+.dash-advice li.advice-warn {
+    color: var(--color-warn-600);
+}
+
+.dash-advice li.advice-high {
+    color: var(--color-danger-600);
+}
+
+/* Score badges mapped to tokens */
+.score-badge.good {
+    background: var(--color-good-50);
+    color: #1b5e20;
+}
+
+.score-badge.warn {
+    background: var(--color-warn-50);
+    color: var(--color-warn-600);
+}
+
+.score-badge.bad {
+    background: var(--color-danger-50);
+    color: var(--color-danger-600);
+}
+
+.score-badge.goodcat {
+    background: var(--color-excellent-50);
+    color: var(--color-excellent-600);
+}
+
+.score-badge.excellent {
+    background: var(--color-good-50);
+    color: #1b5e20;
+}
+
+/* BMI bands */
+.bmi-scale .bmi-band.under {
+    background: var(--color-excellent-50);
+    color: var(--color-excellent-600);
+}
+
+.bmi-scale .bmi-band.normal {
+    background: var(--color-good-50);
+    color: #1b5e20;
+}
+
+.bmi-scale .bmi-band.over {
+    background: var(--color-warn-50);
+    color: var(--color-warn-600);
+}
+
+.bmi-scale .bmi-band.obese {
+    background: var(--color-danger-50);
+    color: var(--color-danger-600);
+}
+
+/* Focus outline utility */
+.focus-ring:focus {
+    outline: none;
+    box-shadow: var(--focus-ring);
+}
+
+.my_label {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-left: 0.75rem;
+    margin-top: -0.75rem;
+    margin-bottom: 0.35rem;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.2s ease-out;
+}
