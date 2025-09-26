@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register — HealthyJuices</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <link href="../css/login_system_style.css" rel="stylesheet">
+</head>
+
+<body class="auth-page">
+    <div class="card auth-card">
+        <div class="auth-header">
+            <h4>Create an account</h4>
+        </div>
+        <div class="card-content">
+            <p class="auth-subtle">Register to save your daily health checks to your personal dashboard.</p>
+            <form id="reg">
+                <div class="input-field">
+                    <input id="email" type="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-field">
+                    <input id="password" type="password" required>
+                    <label for="password">Password (min 6 chars)</label>
+                </div>
+                <div id="regMsg"></div>
+                <div class="auth-actions">
+                    <a href="/" class="btn-flat">Back</a>
+                    <button id="regBtn" class="btn green darken-1" type="submit" disabled>Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        // fetch CSRF token for this session and attach to form submits
+        let __csrf = '';
+        (async function () {
+            let got = false;
+            try {
+                const r = await fetch('csrf.php', { credentials: 'include' });
+                if (r.ok) {
+                    const j = await r.json();
+                    __csrf = j.csrf_token || '';
+                    if (__csrf) got = true;
+                }
+            } catch (e) { }
+            const btn = document.getElementById('regBtn');
+            const msg = document.getElementById('regMsg');
+            if (got) {
+                if (btn) btn.disabled = false;
+            } else {
+                if (msg) msg.textContent = 'Security token could not be obtained. Please reload the page and try again.';
+                if (btn) btn.disabled = true;
+            }
+        })();
+
+        document.getElementById('reg').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const msg = document.getElementById('regMsg');
+            msg.textContent = '';
+            try {
+                // ensure we have a CSRF token before submitting (avoid async race)
+                if (!__csrf) {
+                    try {
+                        const t = await fetch('csrf.php', { credentials: 'include' });
+                        if (t.ok) {
+                            const tj = await t.json();
+                            __csrf = tj.csrf_token || '';
+                        }
+                    } catch (e) { /* ignore - will fail below */ }
+                }
+                const r = await fetch('register.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, password, csrf: __csrf }), credentials: 'include' });
+                const j = await r.json().catch(() => null);
+                if (r.ok && j && j.ok) {
+                    // Use relative resolution so it always stays inside current project folder
+                    window.location = new URL('dashboard.php', location.href).href;
+                    return;
+                }
+                if (j && j.error) {
+                    if (j.error === 'csrf') msg.textContent = 'Security token missing or invalid. Please reload the page and try again.';
+                    else if (j.error === 'exists') msg.textContent = 'An account with that email already exists.';
+                    else msg.textContent = j.error;
+                } else msg.textContent = 'Registration failed';
+            } catch (err) {
+                msg.textContent = 'Network error';
+            }
+        });
+    </script>
+</body>
+
+</html>
