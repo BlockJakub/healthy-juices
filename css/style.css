@@ -1,3 +1,91 @@
+/* ============================== */
+/* Mobile sidenav (Materialize)    */
+/* Improves contrast on dark bg    */
+/* ============================== */
+.sidenav {
+    background-color: var(--sidenav-bg, #263238);
+    /* blue-grey 800 */
+}
+
+.sidenav li>a,
+.sidenav .collapsible-header,
+.sidenav .collapsible-body a {
+    color: var(--sidenav-link, #ECEFF1) !important;
+    /* on-dark text */
+    font-weight: 500;
+}
+
+.sidenav .material-icons {
+    color: var(--sidenav-link, #ECEFF1) !important;
+}
+
+/* Hover/Focus states for better affordance */
+.sidenav li>a:hover,
+.sidenav li>a:focus,
+.sidenav .collapsible-header:hover,
+.sidenav .collapsible-header:focus,
+.sidenav .collapsible-body a:hover,
+.sidenav .collapsible-body a:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Active item highlight */
+.sidenav li.active>a {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #fff !important;
+}
+
+/* Divider color on dark */
+.sidenav .divider {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Collapsible body background on dark */
+.sidenav .collapsible-body {
+    background-color: var(--sidenav-bg, #263238);
+}
+
+/* Ensure collapsible parts inherit dark background and readable text */
+.sidenav .collapsible-header {
+    background: transparent !important;
+}
+
+.sidenav .collapsible-body,
+.sidenav .collapsible-body ul {
+    background-color: var(--sidenav-bg, #263238) !important;
+}
+
+.sidenav .collapsible-body li a {
+    color: var(--sidenav-link, #ECEFF1) !important;
+}
+
+/* Keyboard focus visibility */
+.sidenav a:focus {
+    outline: 2px solid #80cbc4;
+    /* teal lighten-3 */
+    outline-offset: -2px;
+}
+
+/* Desktop dropdown (Topics) */
+.dropdown-content {
+    background-color: var(--dropdown-bg, #263238) !important;
+}
+
+.dropdown-content li>a,
+.dropdown-content li>span {
+    color: var(--dropdown-link, #ECEFF1) !important;
+}
+
+.dropdown-content li:hover,
+.dropdown-content li.active {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dropdown-content a:focus {
+    outline: 2px solid #80cbc4;
+    outline-offset: -2px;
+}
+
 /* Center icon and title in juice recipe cards */
 .juice-title-center {
     display: flex;
@@ -93,6 +181,17 @@
     --input-bg-on-dark: rgba(255, 255, 255, 0.08);
     --input-border-on-dark: rgba(255, 255, 255, 0.28);
 
+    /* Navigation tokens */
+    --sidenav-bg: #263238;
+    /* blue-grey 800 */
+    --sidenav-link: #ECEFF1;
+    /* blue-grey 50 */
+    --dropdown-bg: #263238;
+    /* match sidenav by default */
+    --dropdown-link: #ECEFF1;
+    /* alias for legacy usage */
+    --side-bg: var(--sidenav-bg);
+
     /* Legacy variable names (for existing code) */
     --primary: var(--color-primary-600);
     --primary-dark: #1f2c28;
@@ -137,6 +236,13 @@
         --text-muted: #96a7a0;
         --shadow: 0 4px 24px rgba(0 0 0 / 0.5);
         --bg-transparent1: rgba(255 255 255 / 0.02);
+
+        /* Keep nav dark and readable in dark mode */
+        --sidenav-bg: #1e272b;
+        --sidenav-link: #E6F1F3;
+        --dropdown-bg: #1e272b;
+        --dropdown-link: #E6F1F3;
+        --side-bg: var(--sidenav-bg);
     }
 }
 
@@ -797,17 +903,17 @@ textarea:-ms-input-placeholder {
 /* Dropdown menu items */
 .dropdown-content li>a,
 .dropdown-content li>span {
-    color: var(--text-main) !important;
+    color: var(--dropdown-link) !important;
 }
 
 /* Sidenav link colors on light background */
 .sidenav a {
-    color: var(--text-main) !important;
+    color: var(--sidenav-link) !important;
 }
 
 .sidenav a:hover,
 .sidenav a:focus {
-    color: var(--color-primary-600) !important;
+    color: var(--sidenav-link) !important;
 }
 
 /* =================== ON-DARK CONTEXT UTILS =================== */
@@ -882,39 +988,4 @@ textarea:-ms-input-placeholder {
 .on-dark input:-ms-input-placeholder,
 .on-dark textarea:-ms-input-placeholder {
     color: var(--placeholder-on-dark);
-
-}
-
-/* =================== RESPONSIVE FIXES =================== */
-@media (max-width: 992px) {
-  section,
-  .section {
-    padding: 1.5rem 0.7rem;
-  }
-  .card {
-    padding: 1.2rem 0.7rem;
-  }
-}
-
-@media (max-width: 600px) {
-  section,
-  .section,
-  .grey.lighten-4,
-  .green.lighten-5,
-  .blue-grey.lighten-5 {
-    padding: 1rem 0.5rem;
-    background: var(--color-surface) !important;
-    color: #222 !important;
-  }
-
-  section h1,
-  section h2,
-  section h3,
-  section h4 {
-    color: #222 !important;
-  }
-
-  .card {
-    padding: 0.7rem 0.5rem;
-  }
 }
