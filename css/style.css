@@ -882,4 +882,39 @@ textarea:-ms-input-placeholder {
 .on-dark input:-ms-input-placeholder,
 .on-dark textarea:-ms-input-placeholder {
     color: var(--placeholder-on-dark);
+
+}
+
+/* =================== RESPONSIVE FIXES =================== */
+@media (max-width: 992px) {
+  section,
+  .section {
+    padding: 1.5rem 0.7rem;
+  }
+  .card {
+    padding: 1.2rem 0.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  section,
+  .section,
+  .grey.lighten-4,
+  .green.lighten-5,
+  .blue-grey.lighten-5 {
+    padding: 1rem 0.5rem;
+    background: var(--color-surface) !important;
+    color: #222 !important;
+  }
+
+  section h1,
+  section h2,
+  section h3,
+  section h4 {
+    color: #222 !important;
+  }
+
+  .card {
+    padding: 0.7rem 0.5rem;
+  }
 }
