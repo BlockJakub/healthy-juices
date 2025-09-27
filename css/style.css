@@ -366,6 +366,48 @@ a:hover,
     color: var(--accent);
 }
 
+/* ======= LISTS: COLLECTIONS (Materialize) ======= */
+/* Make collection backgrounds match themed surface and improve contrast in dark mode */
+.collection {
+    background-color: var(--color-surface) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow);
+}
+
+.collection .collection-item {
+    background-color: var(--color-surface) !important;
+    color: var(--text-main) !important;
+    border-bottom: 1px solid var(--color-border) !important;
+}
+
+.collection .collection-item:last-child {
+    border-bottom: none !important;
+}
+
+.collection.with-header .collection-header {
+    background-color: var(--color-surface-alt) !important;
+    color: var(--text-muted) !important;
+    border-bottom: 1px solid var(--color-border) !important;
+}
+
+/* Hover and active states for linkable collection items */
+.collection a.collection-item:not(.active):hover {
+    background-color: rgba(67, 160, 71, 0.08) !important;
+    /* primary tint */
+}
+
+.collection .collection-item.active,
+.collection a.collection-item.active {
+    background-color: rgba(67, 160, 71, 0.12) !important;
+    color: var(--text-main) !important;
+}
+
+/* Avatar variant keeps same surface bg */
+.collection .collection-item.avatar {
+    background-color: var(--color-surface) !important;
+}
+
 /* ======= FORM LABELS & INPUT VISIBILITY ======= */
 /* Make form labels, radio/checkbox options and select labels more visible and higher contrast */
 .input-field label,
