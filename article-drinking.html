@@ -16,28 +16,31 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link type="text/css" rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="body">
 
     <!-- Navbar -->
     <header>
-        <nav class="green darken-1">
+        <nav class="site-navbar">
             <div class="nav-wrapper container">
                 <a href="index.html" class="brand-logo">HealthyJuices</a>
                 <a href="#" data-target="mobile-menu" class="sidenav-trigger">
                     <i class="material-icons">menu</i>
                 </a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a class="hoverable" href="index.html">Home</a></li>
                     <li>
-                        <a class="dropdown-trigger" href="#" data-target="topics-dropdown">Topics<i
+                        <a class="dropdown-trigger hoverable" href="#" data-target="topics-dropdown">Topics<i
                                 class="material-icons right">arrow_drop_down</i></a>
                     </li>
-                    <li class="active"><a href="resources.html">Resources</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li class="active"><a class="hoverable" href="resources.html">Resources</a></li>
+                    <li><a class="hoverable" href="about.html">About</a></li>
+                    <li><a class="hoverable" href="contact.html">Contact</a></li>
+                    <!-- auth links (fallback) -->
+                    <li class="auth-fallback"><a class="hoverable" href="php/login.html">Login</a></li>
+                    <li class="auth-fallback"><a class="hoverable" href="php/register.html">Register</a></li>
                 </ul>
                 <!-- Dropdown Structure -->
                 <ul id="topics-dropdown" class="dropdown-content">
@@ -71,6 +74,9 @@
             <li><a href="resources.html">Resources</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li class="divider"></li>
+            <li id="mobileAuthLinks"><a class="hoverable" href="php/login.html">Login</a><br><a class="hoverable"
+                    href="php/register.html">Register</a></li>
         </ul>
     </header>
 

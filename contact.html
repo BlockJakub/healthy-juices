@@ -10,7 +10,7 @@
     <!-- Google Fonts & Material Icons -->
     <link rel="stylesheet" href="https://use.typekit.net/kcj1oil.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
         .contact-row {
             display: flex;
@@ -52,27 +52,61 @@
 
 <body class="body">
     <header>
-        <nav class="green darken-1">
+        <nav class="site-navbar">
             <div class="nav-wrapper container">
                 <a href="index.html" class="brand-logo">HealthyJuices</a>
                 <a href="#" data-target="mobile-menu" class="sidenav-trigger">
                     <i class="material-icons">menu</i>
                 </a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="article-juices.html">Juices</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="hoverable" href="index.html">Home</a></li>
+                    <li>
+                        <a class="dropdown-trigger hoverable" href="#" data-target="topics-dropdown"
+                            aria-haspopup="true" aria-expanded="false">Topics<i
+                                class="material-icons right">arrow_drop_down</i></a>
+                    </li>
+                    <li><a class="hoverable" href="resources.html">Resources</a></li>
+                    <li><a class="hoverable" href="about.html">About</a></li>
+                    <li><a class="hoverable" href="contact.html">Contact</a></li>
+                    <!-- auth links (fallback) -->
+                    <li class="auth-fallback"><a class="hoverable" href="php/login.html">Login</a></li>
+                    <li class="auth-fallback"><a class="hoverable" href="php/register.html">Register</a></li>
+                </ul>
+                <!-- Dropdown Structure -->
+                <ul id="topics-dropdown" class="dropdown-content" role="menu">
+                    <li role="none"><a role="menuitem" href="article-juices.html">Juices</a></li>
+                    <li role="none"><a role="menuitem" href="article-drinking.html">Drinking</a></li>
+                    <li role="none"><a role="menuitem" href="article-eating.html">Eating</a></li>
+                    <li role="none"><a role="menuitem" href="article-movement.html">Movement</a></li>
+                    <li role="none"><a role="menuitem" href="article-sleep.html">Sleep</a></li>
                 </ul>
             </div>
         </nav>
         <ul class="sidenav" id="mobile-menu">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header">Topics<i class="material-icons right">arrow_drop_down</i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="article-juices.html">Juices</a></li>
+                                <li><a href="article-drinking.html">Drinking</a></li>
+                                <li><a href="article-eating.html">Eating</a></li>
+                                <li><a href="article-movement.html">Movement</a></li>
+                                <li><a href="article-sleep.html">Sleep</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
             <li><a href="resources.html">Resources</a></li>
-            <li><a href="article-juices.html">Juices</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li class="divider"></li>
+            <!-- mobile auth links injected here (fallback) -->
+            <li id="mobileAuthLinks"><a class="hoverable" href="php/login.html">Login</a><br><a class="hoverable"
+                    href="php/register.html">Register</a></li>
         </ul>
     </header>
     <main class="container section">
@@ -143,8 +177,8 @@
                 <div class="col s12 m4 offset-m2">
                     <h5 class="white-text">Links</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="privacy.html">Privacy</a></li>
-                        <li><a class="grey-text text-lighten-3" href="terms.html">Terms</a></li>
+                        <li><a class="grey-text text-lighten-3" href="pages/service/privacy.html">Privacy</a></li>
+                        <li><a class="grey-text text-lighten-3" href="pages/service/terms.html">Terms</a></li>
                         <li><a class="grey-text text-lighten-3" href="about.html">About</a></li>
                     </ul>
                 </div>

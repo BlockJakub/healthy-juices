@@ -44,6 +44,34 @@ php -S localhost:8080 -t .
 
 3. Open http://localhost:8080/ in a browser.
 
+## What to commit (GitHub) vs what to deploy (server)
+
+This project intentionally keeps secrets out of source control. Excluding `php/config.php` from GitHub will not break the project for others—they create their own `php/config.php` from the example file.
+
+- Commit to GitHub (safe):
+  - All HTML/CSS/JS and images: `index.html`, `article-*.html`, `css/`, `js/`, `img/`, `assets/`, `pages/`
+  - PHP app code: `php/*.php` (EXCEPT `php/config.php`)
+  - Example config: `php/config.php.example`
+  - Database schemas: `php/schema.sql`, `php/schema_normalized.sql`
+  - Docs and README: `docs/`, `README.md`, `.gitignore`
+
+- Do NOT commit (secrets, local noise):
+  - `php/config.php` (real DB credentials)
+  - Any `.env*` files (if introduced later)
+  - Build/dep folders: `vendor/`, `node_modules/`, `dist/`, `build/`, caches, logs (covered by `.gitignore`)
+
+- Deploy to the server (hosting):
+  - Everything you committed to GitHub
+  - PLUS: a real `php/config.php` (create by copying `php/config.php.example` and filling DB creds)
+  - Optional: exclude development-only helpers from the server: `php/debug_session.php`, `php/register_debug.php`, `php/test_db.php`, `php/test_links.php`, `php/whoami.php`
+
+Deployment checklist
+- [ ] Upload site files (HTML/CSS/JS/images) and `php/` (minus dev helpers if desired)
+- [ ] Create `php/config.php` on the server with production DB credentials
+- [ ] Create DB and import `php/schema_normalized.sql` (recommended), or use `schema.sql`
+- [ ] Verify PHP version and required extensions (PDO MySQL)
+- [ ] Smoke test: open the site, register/login, submit an entry, view dashboard/modals
+
 ## Database Initialization
 
 1. Create a MySQL database (utf8mb4).
