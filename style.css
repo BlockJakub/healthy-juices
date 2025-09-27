@@ -1,0 +1,939 @@
+/* ============================== */
+/* Mobile sidenav (Materialize)    */
+/* Improves contrast on dark bg    */
+/* ============================== */
+.sidenav {
+    background-color: var(--sidenav-bg, #263238);
+    /* blue-grey 800 */
+}
+
+.sidenav li>a,
+.sidenav .collapsible-header,
+.sidenav .collapsible-body a {
+    color: var(--sidenav-link, #ECEFF1) !important;
+    /* on-dark text */
+    font-weight: 500;
+}
+
+.sidenav .material-icons {
+    color: var(--sidenav-link, #ECEFF1) !important;
+}
+
+/* Hover/Focus states for better affordance */
+.sidenav li>a:hover,
+.sidenav li>a:focus,
+.sidenav .collapsible-header:hover,
+.sidenav .collapsible-header:focus,
+.sidenav .collapsible-body a:hover,
+.sidenav .collapsible-body a:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Active item highlight */
+.sidenav li.active>a {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #fff !important;
+}
+
+/* Divider color on dark */
+.sidenav .divider {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Collapsible body background on dark */
+.sidenav .collapsible-body {
+    background-color: var(--sidenav-bg, #263238);
+}
+
+/* Keyboard focus visibility */
+.sidenav a:focus {
+    outline: 2px solid #80cbc4;
+    /* teal lighten-3 */
+    outline-offset: -2px;
+}
+
+/* Center icon and title in juice recipe cards */
+.juice-title-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2em;
+    width: 100%;
+    text-align: center;
+    /* add extra top spacing so the span separates from the image above */
+    margin: 1rem 0 0.25rem 0;
+    padding-top: 0.25rem;
+}
+
+.juice-title-center .material-icons {
+    margin-right: 0;
+    display: block;
+    font-size: 2.7em;
+    /* space between icon and title (vertical when stacked) */
+    margin-bottom: 0.4rem;
+}
+
+.card-image .material-icons {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    padding: 4px;
+    font-size: 1.8em;
+    color: #546e7a;
+    /* muted color for better readability */
+}
+
+@media (max-width: 600px) {
+    .juice-title-center .material-icons {
+        font-size: 1.3em;
+    }
+}
+
+/* When juice tiles switch to a row layout (if you change .juice-title-center to row),
+   provide horizontal spacing as well */
+@media (min-width: 601px) {
+    .juice-title-center .material-icons {
+        margin-right: 0.5rem;
+        margin-bottom: 0.25rem;
+    }
+}
+
+/* ======= THEME PALETTE & DESIGN TOKENS ======= */
+:root {
+    /* Brand Core */
+    --color-primary-600: #0fac17e3;
+    /* main green */
+    --color-primary-500: #43a047;
+    --color-primary-400: #66bb6a;
+    --color-primary-50: #e8f5e9;
+    --color-accent-500: #ffb300;
+    /* citrus accent */
+    --color-accent-400: #ffc440;
+    --color-accent-50: #fff8e1;
+
+    /* Semantic States */
+    --color-danger-600: #c62828;
+    --color-danger-50: #ffebeb;
+    --color-warn-600: #ff8f00;
+    --color-warn-50: #fff7e0;
+    --color-good-600: #2e7d32;
+    /* reuse primary */
+    --color-good-50: #e8f5e9;
+    --color-excellent-600: #1565c0;
+    --color-excellent-50: #e3f2fd;
+
+    /* Neutrals */
+    --color-bg: #f5f7f8;
+    --color-surface: #ffffff;
+    --color-surface-alt: #f0f3f1;
+    --color-border: #d7e2dd;
+    --color-shadow-rgb: 56 142 60;
+
+    /* Text */
+    --text-main: #bbbbbb;
+    /* default readable body text */
+    --text-muted: #5d6e66;
+    /* supportive copy */
+    --text-invert: #ffffff;
+    /* text on strong brand/primary surfaces */
+    --text-accent: var(--color-accent-500);
+
+    /* On-dark context tokens (for dark/brand surfaces) */
+    --text-on-dark: #ffffff;
+    --muted-on-dark: rgba(255, 255, 255, 0.75);
+    --label-on-dark: rgba(255, 255, 255, 0.92);
+    --placeholder-on-dark: rgba(255, 255, 255, 0.65);
+    --input-bg-on-dark: rgba(255, 255, 255, 0.08);
+    --input-border-on-dark: rgba(255, 255, 255, 0.28);
+
+    /* Legacy variable names (for existing code) */
+    --primary: var(--color-primary-600);
+    --primary-dark: #1f2c28;
+    /* corrected */
+    --accent: var(--color-accent-500);
+    --bg-main: var(--color-bg);
+    --bg-section: var(--color-surface-alt);
+    --bg-card: var(--color-surface);
+    --border-radius: 16px;
+    --border-rdius1: 7px;
+    --shadow: 0 4px 24px rgba(var(--color-shadow-rgb) / 0.08);
+    --bg-transparent1: var(--primary-dark);
+
+    /* Typography Scale (fluid) */
+    --font-sans: "Inter", "Source Sans Pro", "proxima-nova", "Segoe UI", system-ui, Arial, sans-serif;
+    --font-heading: "Poppins", "Montserrat", var(--font-sans);
+    --font-mono: "IBM Plex Mono", "Menlo", monospace;
+    --font-size-body: clamp(0.97rem, 0.92rem + 0.3vw, 1.05rem);
+    --line-height-body: 1.65;
+    --font-h1: clamp(2.1rem, 1.3rem + 3.2vw, 3.4rem);
+    --font-h2: clamp(1.7rem, 1.2rem + 2.2vw, 2.6rem);
+    --font-h3: clamp(1.4rem, 1.05rem + 1.4vw, 2.1rem);
+    --font-h4: clamp(1.2rem, 1.0rem + 0.8vw, 1.6rem);
+    --font-h5: clamp(1.05rem, 0.96rem + 0.4vw, 1.25rem);
+    --font-h6: clamp(0.95rem, 0.90rem + 0.3vw, 1.05rem);
+    --font-weight-heading: 600;
+    --font-weight-bold: 600;
+    --font-weight-regular: 400;
+
+    /* Focus Ring */
+    --focus-ring: 0 0 0 3px rgba(21, 101, 192, 0.28), 0 0 0 1px rgba(21, 101, 192, 0.4);
+}
+
+/* Optional Dark Mode Tokens */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #0f1715;
+        --color-surface: #16211e;
+        --color-surface-alt: #1f2c28;
+        --color-border: #31413c;
+        --text-main: #e4efe9;
+        --text-muted: #96a7a0;
+        --shadow: 0 4px 24px rgba(0 0 0 / 0.5);
+        --bg-transparent1: rgba(255 255 255 / 0.02);
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: transparent;
+
+}
+
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: -10px;
+    /* removes gap between parallax and main */
+}
+
+body {
+    color: var(--text-main);
+    background-color: var(--color-bg);
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: var(--font-sans);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+.body {
+    font-family: "source-sans-pro", "Roboto", Arial, sans-serif;
+    /* replace "source-sans-pro" with your Adobe text font name */
+    color: #263238;
+    background-image: url("../img/Firefly_Stay_active_with_small_daily_movement_161225.jpg");
+    background-size: cover;
+    background-position: center;
+
+}
+
+section,
+.section {
+    background: var(--bg-transparent1);
+    border-radius: var(--border-radius);
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow);
+    padding: 0.5rem 0.5rem;
+}
+
+
+
+/* ======= CARDS ======= */
+.card,
+.card-panel,
+.z-depth-2 {
+    width: 100%;
+    height: 122%;
+    background: var(--bg-card) !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow) !important;
+    color: var(--text-main);
+    margin-bottom: 2rem;
+}
+
+.card-title,
+.card .card-title {
+    color: #017907;
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.5em;
+}
+
+.card-content p {
+    color: var(--text-muted);
+    font-size: 1.08rem;
+}
+
+.card-hoverable img {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.card:hover,
+.card-panel:hover {
+    box-shadow: 0 8px 32px rgba(56, 142, 60, 0.13) !important;
+    transform: translateY(-2px) scale(1.012);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+/* ======= BUTTONS & LINKS ======= */
+.btn,
+.btn-large,
+.btn-small {
+    background: var(--primary) !important;
+    color: #fff !important;
+    border-radius: 32px !important;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    box-shadow: 0 2px 8px rgba(56, 142, 60, 0.09);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover,
+.btn:focus {
+    background: var(--primary-dark) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 16px rgba(56, 142, 60, 0.18);
+}
+
+a,
+.card a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover,
+.card a:hover {
+    color: var(--accent);
+}
+
+/* ======= FORM LABELS & INPUT VISIBILITY ======= */
+/* Make form labels, radio/checkbox options and select labels more visible and higher contrast */
+.input-field label,
+form label,
+.test .input-field label,
+.contact-form-card label {
+    color: rgba(174, 173, 173, 0.95);
+    /* near-black for readability */
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+}
+
+/* Floating/active labels (Materialize) should use the primary color */
+.input-field label.active,
+.input-field input:focus+label,
+.input-field textarea:focus+label,
+.input-field select+label {
+    color: var(--text-main) !important;
+}
+
+/* Helper text slightly muted but readable */
+.input-field .helper-text {
+    color: var(--text-main);
+    font-size: 0.95rem;
+
+    .on-dark input[type="radio"]+span,
+    .on-dark input[type="checkbox"]+span,
+    .on-dark .input-field p span {
+        color: var(--text-on-dark) !important;
+    }
+}
+
+/* Radio/checkbox option labels (span elements) */
+input[type="radio"]+span,
+input[type="checkbox"]+span,
+.input-field p span {
+    color: rgba(180, 181, 182, 0.9);
+    font-weight: 600;
+}
+
+/* Make select text visible */
+select {
+    color: var(--text-main);
+}
+
+/* Small spacing tweak to keep labels from overlapping icons */
+.input-field .material-icons.prefix {
+    margin-top: 0.35rem;
+}
+
+
+/*======================================== TYPOGRAPHY ====================================*/
+/*===================================================================================================*/
+/*=====================================================================================================================================================================================================*/
+
+
+.header {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-heading);
+    font-size: 2.4rem;
+    color: var(--color-primary-600);
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.header-subtitle {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    color: var(--text-main);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-heading);
+    color: var(--color-primary-600);
+    line-height: 1.15;
+    letter-spacing: .5px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: var(--font-h1);
+}
+
+h2 {
+    font-size: var(--font-h2);
+}
+
+h3 {
+    font-size: var(--font-h3);
+}
+
+h4 {
+    font-size: var(--font-h4);
+}
+
+h5 {
+    font-size: var(--font-h5);
+}
+
+h6 {
+    font-size: var(--font-h6);
+}
+
+.flow-text,
+p,
+li {
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+}
+
+.muted,
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* ======= ICONS ======= */
+.material-icons,
+.material-icons.left,
+.material-icons.prefix {
+    color: #90a4ae !important;
+    opacity: 0.85;
+    vertical-align: middle;
+    transition: color 0.2s;
+}
+
+.card-title .material-icons.left {
+    font-size: 2.1em;
+    margin-right: 0.3em;
+}
+
+@media (max-width: 992px) {
+    .card-title .material-icons.left {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 600px) {
+    .card-title .material-icons.left {
+        font-size: 1.1em;
+    }
+}
+
+/* ======= SECTIONS & DIVIDERS ======= */
+.section-divider {
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+    border: none;
+    margin: 3rem 0 2rem 0;
+    border-radius: 22px;
+}
+
+/* ======= NAVBAR & FOOTER ======= */
+.nav-wrapper,
+.page-footer {
+    background: var(--primary-dark) !important;
+    border-radius: var(--border-radius1) !important;
+}
+
+.page-footer {
+    border-radius: var(--border-radius1) var(--border-radius1) 0 0;
+    margin-top: 3rem;
+    box-shadow: var(--shadow);
+}
+
+.page-footer h5,
+.page-footer a,
+.page-footer p {
+    color: #fff !important;
+}
+
+.page-footer a:hover {
+    color: var(--accent) !important;
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 992px) {
+
+    section,
+    .section {
+        padding: 1.5rem 0.7rem;
+    }
+
+    .card,
+    .card-panel,
+    .z-depth-2 {
+        padding: 1.2rem 0.7rem;
+    }
+}
+
+@media (max-width: 600px) {
+
+    section,
+    .section {
+        padding: 1rem 0.2rem;
+    }
+
+    .card,
+    .card-panel,
+    .z-depth-2 {
+        padding: 0.7rem 0.2rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Muted color and responsive size for Material Icons in evidence cards */
+.evidence .card-title .material-icons.left {
+    color: #90a4ae !important;
+    opacity: 0.85;
+    font-size: 2.7em;
+    vertical-align: middle;
+    margin-right: 0.3em;
+    transition: font-size 0.2s;
+}
+
+@media (max-width: 992px) {
+    .evidence .card-title .material-icons.left {
+        font-size: 2.1em;
+    }
+}
+
+@media (max-width: 600px) {
+    .evidence .card-title .material-icons.left {
+        font-size: 1.5em;
+    }
+}
+
+.evidence .card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+/* Muted color for Material Icons in contact form and map */
+.contact-form-card .material-icons.prefix,
+.contact-form-card .material-icons.left,
+.contact-form-card .material-icons,
+.contact-row .card .material-icons,
+.contact-hero .material-icons {
+    color: #90a4ae !important;
+    /* blue-grey lighten-1 */
+    opacity: 0.85;
+    font-size: 3.7em;
+}
+
+
+
+/* Contact form location input fix */
+#contact-form #location {
+    letter-spacing: 0.05em;
+    font-size: 1.1em;
+    background: #f3f7f9;
+    border-radius: 6px;
+    padding-left: 0.5em;
+    min-width: 120px;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* Body text */
+/* Removed duplicate body & heading definitions in favor of token-based system above */
+
+section {
+    margin: 2rem;
+    padding: 2rem;
+}
+
+/* Cards / Juice tiles titles */
+.juice-tile-btn.card-title {
+    font-family: "montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    transform: translate(-40%, -40%);
+    color: #546e7a;
+    /* muted color for better readability */
+}
+
+/* Article cards kicker / meta info */
+.kicker,
+.article-meta {
+    font-family: "source-sans-pro", sans-serif;
+    font-weight: 400;
+}
+
+
+main.container.section {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.blog-article section {
+    margin-bottom: 2.5rem;
+}
+
+.juice-links-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.juice-tile-btn.card {
+    max-width: 240px;
+    flex: 1 1 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.juice-tile-btn .card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Footer fixes */
+.page-footer {
+    padding: 3rem 2rem;
+}
+
+/* =================== NAVBAR =================== */
+.site-navbar {
+    background: var(--primary-dark);
+    /* green with 0.4 opacity */
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: space-around;
+    border-radius: var(--border-radius1) !important;
+
+}
+
+.site-navbar .brand-logo,
+.site-navbar .nav-wrapper a,
+.site-navbar .nav-wrapper a:hover {
+    color: var(--text-invert) !important;
+    /* improved contrast */
+}
+
+/* Increase navbar link contrast on hover/focus */
+.site-navbar .nav-wrapper a:focus,
+.site-navbar .nav-wrapper a:hover {
+    color: var(--color-accent-400) !important;
+    text-decoration: none;
+}
+
+/* Problem / Explanation and Summary sections readability overrides */
+section.problem.grey.lighten-4,
+section.summary-conclusion.grey.lighten-4 {
+    background: var(--color-surface) !important;
+    /* solid white for contrast */
+    color: var(--text-main) !important;
+}
+
+section.problem.grey.lighten-4 h2,
+section.summary-conclusion.grey.lighten-4 h2,
+section.problem.grey.lighten-4 p,
+section.summary-conclusion.grey.lighten-4 p {
+    color: var(--text-main) !important;
+}
+
+/* Ensure inner columns inherit readable color */
+section.problem.grey.lighten-4 .col,
+section.summary-conclusion.grey.lighten-4 .col {
+    color: var(--text-main);
+}
+
+/* Image captions or muted text inside those sections */
+section.problem.grey.lighten-4 .muted,
+section.summary-conclusion.grey.lighten-4 .muted {
+    color: var(--text-muted);
+}
+
+.site-navbar .sidenav-trigger .material-icons {
+    color: #ffffff;
+}
+
+/* Make the Evidence / Research cards full-width on medium-small screens (<= 964px) */
+@media (max-width: 964px) {
+    .evidence .row {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .evidence .col.s12.m4 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .evidence .card {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .evidence .card-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* Slightly increase title size and icon on medium-small screens for emphasis */
+    .evidence .card-title {
+        font-size: 1.4rem;
+    }
+
+    .evidence .card-title .material-icons.left {
+        font-size: 3.2em !important;
+        margin-right: 0.4em;
+    }
+}
+
+/* =================== ACCESSIBILITY: CONTRAST CONTROL =================== */
+/* General rule: on light tinted backgrounds, force readable text */
+.grey.lighten-4,
+.green.lighten-5,
+.blue-grey.lighten-5 {
+    color: var(--text-main) !important;
+}
+
+.grey.lighten-4 h1,
+.grey.lighten-4 h2,
+.grey.lighten-4 h3,
+.grey.lighten-4 h4,
+.grey.lighten-4 h5,
+.grey.lighten-4 h6,
+.green.lighten-5 h1,
+.green.lighten-5 h2,
+.green.lighten-5 h3,
+.green.lighten-5 h4,
+.green.lighten-5 h5,
+.green.lighten-5 h6,
+.blue-grey.lighten-5 h1,
+.blue-grey.lighten-5 h2,
+.blue-grey.lighten-5 h3,
+.blue-grey.lighten-5 h4,
+.blue-grey.lighten-5 h5,
+.blue-grey.lighten-5 h6 {
+    color: var(--color-primary-600) !important;
+}
+
+/* Strengthen the specific sections called out */
+section.problem.grey.lighten-4 {
+    background: #ffffff !important;
+}
+
+section.summary-conclusion.grey.lighten-4 {
+    background: #ffffff !important;
+}
+
+section.testimony.green.lighten-5 {
+    background: #ffffff !important;
+}
+
+/* Ensure child columns inherit readable color */
+section.problem.grey.lighten-4 .col,
+section.summary-conclusion.grey.lighten-4 .col,
+section.testimony.green.lighten-5 .col {
+    color: var(--text-main) !important;
+}
+
+/* Form controls: readable labels, inputs, placeholders on all backgrounds */
+.input-field label,
+form label {
+    color: rgba(31, 45, 42, 0.95) !important;
+}
+
+.input-field label.active,
+.input-field input:focus+label,
+.input-field textarea:focus+label,
+.input-field select+label {
+    color: var(--color-primary-600) !important;
+}
+
+.input-field .helper-text {
+    color: var(--text-muted) !important;
+}
+
+/* Inputs and selects text */
+.input-field input[type="text"],
+.input-field input[type="number"],
+.input-field input[type="date"],
+.input-field input[type="email"],
+.input-field input[type="password"],
+.input-field textarea,
+select,
+.select-dropdown {
+    color: var(--text-main) !important;
+}
+
+/* Placeholders */
+::placeholder {
+    color: #607d8b;
+    opacity: 1;
+}
+
+input::-webkit-input-placeholder {
+    color: #607d8b;
+}
+
+textarea::-webkit-input-placeholder {
+    color: #607d8b;
+}
+
+input::-moz-placeholder {
+    color: #607d8b;
+}
+
+textarea::-moz-placeholder {
+    color: #607d8b;
+}
+
+input:-ms-input-placeholder {
+    color: #607d8b;
+}
+
+textarea:-ms-input-placeholder {
+    color: #607d8b;
+}
+
+/* Dropdown menu items */
+.dropdown-content li>a,
+.dropdown-content li>span {
+    color: var(--text-main) !important;
+}
+
+/* Sidenav link colors on light background */
+.sidenav a {
+    color: var(--text-main) !important;
+}
+
+.sidenav a:hover,
+.sidenav a:focus {
+    color: var(--color-primary-600) !important;
+}
+
+/* =================== ON-DARK CONTEXT UTILS =================== */
+/* Apply to containers with dark or brand backgrounds to switch to on-dark text tokens */
+.on-dark,
+.site-navbar,
+.page-footer,
+.green.darken-1,
+.green.darken-2,
+.green.darken-3 {
+    color: var(--text-on-dark) !important;
+}
+
+.on-dark h1,
+.on-dark h2,
+.on-dark h3,
+.on-dark h4,
+.on-dark h5,
+.on-dark h6 {
+    color: var(--text-on-dark) !important;
+}
+
+.on-dark .muted,
+.on-dark .text-muted {
+    color: var(--muted-on-dark) !important;
+}
+
+.on-dark a {
+    color: var(--text-on-dark) !important;
+}
+
+.on-dark a:hover,
+.on-dark a:focus {
+    color: var(--color-accent-400) !important;
+}
+
+/* Form controls on dark backgrounds */
+.on-dark .input-field label,
+.on-dark form label {
+    color: var(--label-on-dark) !important;
+}
+
+.on-dark .input-field label.active,
+.on-dark .input-field input:focus+label,
+.on-dark .input-field textarea:focus+label,
+.on-dark .input-field select+label {
+    color: var(--text-on-dark) !important;
+}
+
+.on-dark .input-field .helper-text {
+    color: var(--muted-on-dark) !important;
+}
+
+.on-dark .input-field input[type="text"],
+.on-dark .input-field input[type="number"],
+.on-dark .input-field input[type="date"],
+.on-dark .input-field input[type="email"],
+.on-dark .input-field input[type="password"],
+.on-dark .input-field textarea,
+.on-dark select,
+.on-dark .select-dropdown {
+    color: var(--text-on-dark) !important;
+    background-color: var(--input-bg-on-dark);
+    border-bottom-color: var(--input-border-on-dark) !important;
+}
+
+.on-dark ::placeholder,
+.on-dark input::-webkit-input-placeholder,
+.on-dark textarea::-webkit-input-placeholder,
+.on-dark input::-moz-placeholder,
+.on-dark textarea::-moz-placeholder,
+.on-dark input:-ms-input-placeholder,
+.on-dark textarea:-ms-input-placeholder {
+    color: var(--placeholder-on-dark);
+}
